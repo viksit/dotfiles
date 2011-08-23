@@ -72,8 +72,30 @@ noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 
+
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
 
+" Map ctrl + arrow keys to move through windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+"Enable NERDTree
+map <leader>n :NERDTreeToggle<CR>
 
 
+" ACK plugin for fuzzy searches
+nmap <leader>a <Esc>:Ack!
+
+" Tab completion 
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+
+" Fugitive enable
+set laststatus=2
+"set statusline=%{fugitive#statusline()}
+"set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
+"set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{fugitive#statusline()}%y%=%-16(\ %l,%c-%v\ %)%P
