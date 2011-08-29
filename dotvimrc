@@ -99,3 +99,6 @@ set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 "set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{fugitive#statusline()}%y%=%-16(\ %l,%c-%v\ %)%P
+
+" Disable web-indent logging
+let g:js_indent_log = 0
