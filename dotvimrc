@@ -102,3 +102,6 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockSt
 
 " Disable web-indent logging
 let g:js_indent_log = 0
+
+" Highlighting errors
+hi SpellBad cterm=underline ctermbg=black ctermfg=red
