@@ -113,7 +113,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 
 
-set mouse=a " Enable the mouse
-set ttymouse=xterm2
-behave xterm
-set selectmode=mouse
+"set mouse=a " Enable the mouse
+"set ttymouse=xterm2
+"behave xterm
+"set selectmode=mouse
