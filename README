@@ -1,3 +1,13 @@
 - Make sure to git init and load all submodules after doing a git checkout on this repository.
 - Make sure to do a symlink from .vimrc to this dotvimrc file so that all files remain within the git repo
 
+Commands to replicate:
+
+git clone <this repository> into .vim directory
+cd .vim
+git submodule sync
+git submodule init
+git submodule update
+git submodule foreach git pull origin master
+git submodule foreach git submodule init
+git submodule foreach git submodule update
