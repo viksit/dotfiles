@@ -72,10 +72,9 @@ au BufNewFile,BufRead *.vm setfiletype javascript
 "map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
 "map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 "
-
-noremap <leader>o <Esc>:CommandT<CR>
-noremap <leader>O <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
+noremap <C-o> <Esc>:CommandT<CR>
+noremap <C-f> <Esc>:CommandTFlush<CR>
+noremap <C-m> <Esc>:CommandTBuffer<CR>
 
 
 let g:tagbar_usearrows = 1
@@ -95,8 +94,6 @@ map <leader>n :NERDTreeToggle<CR>
 nmap <leader>a <Esc>:Ack!
 
 " Tab completion 
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
 
 " Fugitive enable
 set laststatus=2
@@ -104,3 +101,24 @@ set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 "set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{fugitive#statusline()}%y%=%-16(\ %l,%c-%v\ %)%P
+
+" Disable web-indent logging
+let g:js_indent_log = 0
+
+" Highlighting errors
+hi SpellBad cterm=underline ctermbg=black ctermfg=red
+
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+
+" Configure CTRL-arrow keys to move between windows (miniBufExplorer plugin)
+let g:miniBufExplMapWindowNavArrows = 1
+" Configure (SHIFT)-CTRL-TAB to switch through open windows
+"    (miniBufExplorer plugin)
+let g:miniBufExplMapCTabSwitchBuffs = 1
+
+
+"set mouse=a " Enable the mouse
+"set ttymouse=xterm2
+"behave xterm
+"set selectmode=mouse
