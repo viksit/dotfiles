@@ -13,7 +13,12 @@ set history=1000
 set ruler
 set hlsearch
 set nocompatible
+set t_Co=256
+colorscheme ir_black
+set guifont=Monaco:h13
+set wildmenu
 
+syntax on
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   filetype plugin indent on
