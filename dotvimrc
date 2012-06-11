@@ -72,9 +72,9 @@ au BufNewFile,BufRead *.vm setfiletype javascript
 "map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
 "map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 "
-noremap <C-o> <Esc>:CommandT<CR>
-noremap <C-f> <Esc>:CommandTFlush<CR>
-noremap <C-m> <Esc>:CommandTBuffer<CR>
+" noremap <C-o> <Esc>:CommandT<CR>
+" noremap <C-f> <Esc>:CommandTFlush<CR>
+" noremap <C-m> <Esc>:CommandTBuffer<CR>
 
 
 let g:tagbar_usearrows = 1
