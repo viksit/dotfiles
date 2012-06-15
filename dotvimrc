@@ -72,10 +72,6 @@ au BufNewFile,BufRead *.vm setfiletype javascript
 "map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
 "map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 "
-" noremap <C-o> <Esc>:CommandT<CR>
-" noremap <C-f> <Esc>:CommandTFlush<CR>
-" noremap <C-m> <Esc>:CommandTBuffer<CR>
-
 
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
@@ -122,3 +118,12 @@ let g:miniBufExplMapCTabSwitchBuffs = 1
 "set ttymouse=xterm2
 "behave xterm
 "set selectmode=mouse
+let g:ctrlp_use_caching = 1
+let g:ctrlp_cmd = 'CtrlPBuffer'
+map <F2> :CtrlP<CR> 
+
+let g:syntastic_mode_map = { 'mode': 'passive',
+                            \ 'active_filetypes': [],
+                            \ 'passive_filetypes': [] }
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 0
