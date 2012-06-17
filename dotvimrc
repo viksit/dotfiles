@@ -121,9 +121,7 @@ let g:miniBufExplMapCTabSwitchBuffs = 1
 let g:ctrlp_use_caching = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 map <F2> :CtrlP<CR> 
-
-let g:syntastic_mode_map = { 'mode': 'passive',
-                            \ 'active_filetypes': [],
-                            \ 'passive_filetypes': [] }
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 0
+let g:NERDTreeDirArrows=0
+let g:SyntasticDisable=1
+let g:pyflakes_autostart = 0
+set backspace=indent,eol,start
