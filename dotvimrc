@@ -123,5 +123,5 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 map <F2> :CtrlP<CR> 
 let g:NERDTreeDirArrows=0
 let g:SyntasticDisable=1
-let g:pyflakes_autostart = 0
+"let g:pyflakes_autostart = 0
 set backspace=indent,eol,start
