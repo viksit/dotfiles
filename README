@@ -1,3 +1,7 @@
+Viksit Gaur
+mail at viksit dot com
+----------------------
+
 - Make sure to git init and load all submodules after doing a git checkout on this repository.
 - Make sure to do a symlink from .vimrc to this dotvimrc file so that all files remain within the git repo
 
