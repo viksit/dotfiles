@@ -156,6 +156,10 @@ set showmode
 
 "filetype plugin on
 "set ofu=syntaxcomplete#Complete
+
+"au FileType python set omnifunc=pythoncomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
+
 "let g:SuperTabDefaultCompletionType = "context"
 "
 
