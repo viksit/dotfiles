@@ -9,7 +9,7 @@ def tern_displayError(err):
 def tern_makeRequest(port, doc):
   try:
     req = opener.open("http://localhost:" + str(port) + "/", json.dumps(doc),
-                          float(vim.eval("g:tern_request_timeout")));
+                      float(vim.eval("g:tern_request_timeout")))
     return json.loads(req.read())
   except urllib2.HTTPError, error:
     tern_displayError(error.read())
@@ -108,7 +108,7 @@ def tern_killServers():
     tern_killServer(project)
 
 def tern_relativeFile():
-  filename = vim.eval("expand('%:p')")
+  filename = vim.eval("expand('%:p')").decode('utf-8')
   return filename[len(tern_projectDir()) + 1:]
 
 def tern_bufferSlice(buf, pos, end):
@@ -223,7 +223,7 @@ def tern_ensureCompletionCached():
   curLine = vim.current.buffer[curRow - 1]
 
   if (curRow == int(cached["row"]) and curCol >= int(cached["end"]) and
-      curLine[int(cached["start"]):int(cached["end"])] == cached["word"] and
+      curLine[0:int(cached["end"])] == cached["word"] and
       (not re.match(".*\\W", curLine[int(cached["end"]):curCol]))):
     return
 
@@ -242,7 +242,7 @@ def tern_ensureCompletionCached():
     "row": curRow,
     "start": start,
     "end": end,
-    "word": curLine[start:end]
+    "word": curLine[0:end]
   }))
 
 def tern_typeDoc(rec):
@@ -299,7 +299,7 @@ def tern_lookupDefinition(cmd):
       vim.command("call cursor(" + str(lnum) + "," + str(col) + ")")
     else:
       vim.command(cmd + " +call\ cursor(" + str(lnum) + "," + str(col) + ") " +
-        tern_projectFilePath(filename).replace(" ", "\\ "))
+        tern_projectFilePath(filename).replace(u" ", u"\\ "))
   elif "url" in data:
     vim.command("echo " + json.dumps("see " + data["url"]))
   else:
