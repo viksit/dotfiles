@@ -26,6 +26,8 @@ syntax on
 filetype plugin indent on
 "endif
 
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
 "function! DoPrettyXML()
   "" save the filetype so we can restore it later
   "let l:origft = &ft
@@ -218,3 +220,20 @@ set pastetoggle=<F10>
 
 set nofoldenable    " disable folding
 
+let g:pymode_paths=["/usr/local/lib/python2.7/site-packages/"]
+" After enabling python mode, custom things
+let g:pymode_options = 0
+setlocal complete+=t
+setlocal formatoptions-=t
+setlocal nowrap
+setlocal textwidth=79
+setlocal commentstring=#%s
+setlocal define=^\s*\\(def\\\\|class\\)
+
+let g:pymode_rope = 0
+let g:pymode_lint = 0
+let g:pymode_options_colorcolumn = 0
+let g:pymode_doc = 0
+let g:pymode_virtualenv = 0
+set nonumber
+set visualbell t_vb=
